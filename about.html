@@ -10,140 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: white;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: #2196f3;
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 400;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: background-color 0.3s ease;
-        }
-        
-        nav a:hover {
-            background-color: rgba(255,255,255,0.2);
-        }
-        
-        main {
-            padding: 3rem 0;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .card h2 {
-            color: #2196f3;
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #2196f3;
-            padding-bottom: 0.5rem;
-        }
-        
-        .card p {
-            margin-bottom: 1rem;
-            text-align: justify;
-            line-height: 1.8;
-        }
-        
-        .card ul {
-            list-style: disc;
-            padding-left: 2rem;
-        }
-        
-        .card li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .card a {
-            color: #2196f3;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .card a:hover {
-            color: #1976d2;
-            text-decoration: underline;
-        }
-        
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        footer p {
-            font-size: 0.95rem;
-            font-weight: 300;
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .card {
-                padding: 1.5rem;
-            }
-            
-            .card h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -163,21 +31,8 @@
     <main>
         <div class="container">
             <section class="card">
-                <h2>About the CNS/CP Project</h2>
-                <p>CNS/CP—the Connectivity Naming System with Connection Profile—is a modern foundation for secure, agile, and context-first connectivity between digital systems. Unlike traditional Internet models that revolve around endpoint addresses such as DNS or IP, CNS/CP centers every digital relationship on explicit capabilities, roles, and use-case context. At its heart, CNS/CP introduces the idea that network connections should not be built merely by knowing "where" a node is, but by understanding "what" a node provides and for "whom" within a particular real-world or logical context.</p>
-                <p>Every connection in CNS/CP is defined by a Connection Profile—named in the format cp:profile.example—that describes both the consumer and provider roles involved. Each declared CP outlines the properties expected for both roles, allowing system nodes to advertise or request capabilities universally. Nodes in a CNS/CP network declare their intended profiles and the context—whether that's a physical space like a factory or an abstract scope such as a digital service vertical—where their capabilities apply. This results in purposeful, orchestrated networks in which interoperability and security are built into every connection, and dynamic relationships can adapt in real-time.</p>
-                <p>Central orchestration replaces conventional configuration. An orchestrator, sometimes called a broker, becomes responsible for matching nodes with compatible context and CP roles, then instantiating direct, policy-governed relationships—no need for manual interventions or static mapping. This orchestration enables smarter automation, robust lifecycle management, and zero-trust enforcement, shifting connectivity from static schema to intent-based, policy-driven integration. Providers and consumers of CPs can change, scale, and update their profiles with minimal manual effort, streamlining integration for complex domains like smart buildings, IoT fleets, and enterprise services.​</p>
-                <p>CNS/CP's architecture is fully open-source and designed to work across industries. The formal specification is governed at github.com/CNSCP/specification, ensuring common standards and licensing for broad adoption. As part of the ecosystem, Project Arete leads the reference implementation of CNS/CP, focusing on real-world orchestration, CP management, and scalable workflow automation. Project Arete helps validate, extend, and support the growth of CNS/CP standards—learn more or get involved at projectarete.io.​</p>
-            </section>
-            
-            <section class="card">
-                <h2>Related Projects</h2>
-                <ul>
-                    <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
-                    <li><a href="https://projectarete.io">Project Arete</a> (Reference implementation of CNS/CP) </li>
-                    <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box (IBB)</a></li>
-                    <li><a href="https://c4sb.org">Coalition for Smarter Buildings (C4SB)</a></li>
-                </ul>
+                <h2>About Our Project</h2>
+                <p>This website is dedicated to sharing information about CNS/CP and related projects.</p>
             </section>
         </div>
     </main>
