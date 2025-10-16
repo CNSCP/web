@@ -31,7 +31,7 @@
         }
         
         header {
-            background: #ADD8E6;
+            background: #2196f3;
             color: white;
             padding: 2rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -74,6 +74,12 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .card h2 {
@@ -123,6 +129,10 @@
             .card {
                 padding: 1.5rem;
             }
+            
+            .card h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -144,25 +154,20 @@
     <main>
         <div class="container">
             <section class="card">
-                <h2>Who We Are</h2>
-                <p>CNS/CP is an organization dedicated to excellence and innovation. We are committed to providing quality services and building strong relationships with our community.</p>
+                <h2>About This Project</h2>
+                <p>This is a simple informational website for CNS/CP. The project is currently under development.</p>
             </section>
             
             <section class="card">
                 <h2>Our Mission</h2>
-                <p>Our mission is to deliver exceptional value through cutting-edge solutions and collaborative partnerships. We strive to make a positive impact in everything we do.</p>
-            </section>
-            
-            <section class="card">
-                <h2>Our Values</h2>
-                <p>We believe in integrity, transparency, and continuous improvement. These core values guide our work and shape our culture.</p>
+                <p>To provide clear and accessible information about our services.</p>
             </section>
         </div>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 CNS/CP. All rights reserved.</p>
+            <p>© 2025 CNS/CP. All rights reserved.</p>
         </div>
     </footer>
 </body>
