@@ -31,7 +31,7 @@
         }
         
         header {
-            background: #ADD8E6;
+            background: #2196f3;
             color: white;
             padding: 2rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -74,6 +74,12 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
         .card h2 {
@@ -95,15 +101,6 @@
             font-size: 1.1rem;
             line-height: 1.7;
             margin-bottom: 1rem;
-        }
-        
-        .card ul {
-            margin-left: 2rem;
-            color: #666;
-        }
-        
-        .card ul li {
-            margin-bottom: 0.5rem;
         }
         
         footer {
@@ -132,13 +129,17 @@
             .card {
                 padding: 1.5rem;
             }
+            
+            .card h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Licensing - CNS/CP</h1>
+            <h1>Licensing Information</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -153,30 +154,15 @@
     <main>
         <div class="container">
             <section class="card">
-                <h2>Licensing Information</h2>
-                <p>This page contains information about the licensing terms and conditions for CNS/CP.</p>
-            </section>
-            
-            <section class="card">
-                <h2>Terms of Use</h2>
-                <p>By using this website and any associated services, you agree to comply with the following terms:</p>
-                <ul>
-                    <li>Content may not be reproduced without permission</li>
-                    <li>All rights are reserved by CNS/CP</li>
-                    <li>Unauthorized use of materials is prohibited</li>
-                </ul>
-            </section>
-            
-            <section class="card">
-                <h2>Copyright Notice</h2>
-                <p>All content on this website is protected by copyright laws. &copy; 2025 CNS/CP. All rights reserved.</p>
+                <h2>Licensing Details</h2>
+                <p>This project is currently not licensed. Please check back later for updates on licensing information.</p>
             </section>
         </div>
     </main>
     
     <footer>
         <div class="container">
-            <p>&copy; 2025 CNS/CP. All rights reserved.</p>
+            <p>© 2025 CNS/CP. All rights reserved.</p>
         </div>
     </footer>
 </body>
