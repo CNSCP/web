@@ -180,8 +180,8 @@ The grants of rights in Section 2 and Section 3 above are expressly conditioned 
 
 1 - Make any Connection Profiles created by you or your software available for anyone to access, view, and use for free and without restriction under the Creative Commons Attribution-NoDerivatives 4.0 International License (CC BY-ND 4.0).
 
-2 - Place any Connection Profiles created into the public CNS/CP-compliant federated registry designated at cnscp.io.
+2 - Place any Connection Profiles created into the public CNS/CP-compliant federated registry designated at [Visit CNSCP.io](https://cnscp.io).
 
 Failure to comply with these requirements immediately and permanently terminates all rights granted to you under this License, including but not limited to the copyright and patent licenses in Sections 2 and 3.
 
-For more information, visit cnscp.io.
+For more information, visit [Visit CNSCP.io](https://cnscp.io).
