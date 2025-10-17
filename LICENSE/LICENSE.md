@@ -174,22 +174,22 @@ This CNS/CP License is based on Apache 2.0:
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
----- CNS/CP Registry Condition ----
+==== CNS/CP Registry Condition ====
 
-The grants of rights in Section 2 and Section 3 above are expressly 
-conditioned on your agreement to undertake the following steps when the 
-Work is used to create, modify, store, or administer Connection Profiles:
+  The grants of rights in Section 2 and Section 3 above are expressly 
+  conditioned on your agreement to undertake the following steps when the 
+  Work is used to create, modify, store, or administer Connection Profiles:
 
-1 - Make any Connection Profiles created by you or your software 
-available for anyone to access, view, and use for free and without r
-estriction under the Creative Commons Attribution-NoDerivatives 4.0 
-International License (CC BY-ND 4.0).
+  1. Make any Connection Profiles created by you or your software 
+     available for anyone to access, view, and use for free and without 
+     restriction under the Creative Commons Attribution-NoDerivatives 4.0 
+     International License (CC BY-ND 4.0).
 
-2 - Place any Connection Profiles created into the public 
-CNS/CP-compliant federated registry designated at cnscp.io.
+  2. Place any Connection Profiles created into the public 
+     CNS/CP-compliant federated registry designated at cnscp.io.
 
-Failure to comply with these requirements immediately and permanently 
-terminates all rights granted to you under this License, including 
-but not limited to the copyright and patent licenses in Sections 2 and 3.
+  Failure to comply with these requirements immediately and permanently
+  terminates all rights granted to you under this License, including 
+  but not limited to the copyright and patent licenses in Sections 2 and 3.
 
 For more information, visit cnscp.io.
