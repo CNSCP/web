@@ -1,5 +1,6 @@
+
 ==============================================================================
-This License is based on Apache 2.0:
+This CNS/CP License is based on Apache 2.0:
 ==============================================================================
 
   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
