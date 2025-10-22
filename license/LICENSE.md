@@ -192,4 +192,4 @@ This CNS/CP License is based on Apache 2.0:
   terminates all rights granted to you under this License, including 
   but not limited to the copyright and patent licenses in Sections 2 and 3.
 
-For more information, visit cnscp.io.
+For more information, visit cnscp.io/license
