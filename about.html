@@ -1,75 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - CNS/CP</title>
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — CNS/CP</title>
+  <meta name="description" content="How CNS/CP works: Connection Profiles, orchestration, the open-source specification, and Project Arete.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>About CNS/CP</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="license/index.html">Licensing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="CNSCP-Square.png" alt="CNS/CP logo" /> CNS/CP</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">About</span>
+        <h1>About the CNS/CP Project</h1>
+        <p>CNS/CP centers every digital relationship on explicit capabilities, roles, and use-case context &mdash; not merely on where a node is, but on what a node provides, and for whom, within a particular real-world or logical context.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="card">
+          <h2>Connection Profiles</h2>
+          <p>Every connection in CNS/CP is defined by a <strong>Connection Profile</strong> &mdash; named in the format <span class="mono">cp:profile.example</span> &mdash; that describes both the consumer and provider roles involved. Each declared CP outlines the properties expected of both roles, allowing system nodes to advertise or request capabilities universally.</p>
+          <p>Nodes declare their intended profiles and the context where their capabilities apply &mdash; a physical space like a factory, or an abstract scope such as a digital-service vertical. The result is purposeful, orchestrated networks in which interoperability and security are built into every connection, and dynamic relationships adapt in real time.</p>
         </div>
-    </header>
-    
-    <main>
-        <div class="container">
-            <section class="card">
-                <h2>About the CNS/CP Project</h2>
-                <p>CNS/CP—the Connectivity Naming System with Connection Profile—is a modern foundation for secure, agile, and context-first connectivity between digital systems. Unlike traditional Internet models that revolve around endpoint addresses such as DNS or IP, CNS/CP centers every digital relationship on explicit capabilities, roles, and use-case context. At its heart, CNS/CP introduces the idea that network connections should not be built merely by knowing "where" a node is, but by understanding "what" a node provides and for "whom" within a particular real-world or logical context.</p>
-                <h3>Connection Profiles</h3>
-                <p>Every connection in CNS/CP is defined by a Connection Profile—named in the format cp:profile.example—that describes both the consumer and provider roles involved. Each declared CP outlines the properties expected for both roles, allowing system nodes to advertise or request capabilities universally. Nodes in a CNS/CP network declare their intended profiles and the context—whether that's a physical space like a factory or an abstract scope such as a digital service vertical—where their capabilities apply. This results in purposeful, orchestrated networks in which interoperability and security are built into every connection, and dynamic relationships can adapt in real-time.​</p>
-                <h3>Orchestration</h3>
-                <p>Central orchestration replaces conventional configuration. An orchestrator, sometimes called a broker, becomes responsible for matching nodes with compatible context and CP roles, then instantiating direct, policy-governed relationships—no need for manual interventions or static mapping. This orchestration enables smarter automation, robust lifecycle management, and zero-trust enforcement, shifting connectivity from static schema to intent-based, policy-driven integration. Providers and consumers of CPs can change, scale, and update their profiles with minimal manual effort, streamlining integration for complex domains like smart buildings, IoT fleets, and enterprise services.</p>
-            </section>
-            <section class="card">
-                <h2>Open Source Implementation</h2>
-                <p>CNS/CP's architecture is fully open-source and designed to work across industries. The formal specification is governed at github.com/CNSCP/specification, ensuring common standards and licensing for broad adoption. As part of the ecosystem, Project Arete leads the reference implementation of CNS/CP, focusing on real-world orchestration, CP management, and scalable workflow automation.</p>
-                <ul style="margin-left: 2em;">
-                    <li><a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md" target="_blank">CNS/CP formal Specification</a></li>
-                    <li><a href="https://github.com/CNSCP" target="_blank">CNS/CP on GitHub</a></li>
-                </ul>
-                <p></p>
-                <h3>Project Arete</h3>
-                <p>Project Arete is an open-source reference imoplementation of CNS/CP. Project Arete helps validate, extend, and support the adoption of CNS/CP standards.</p>
-                <ul style="margin-left: 2em;">
-                    <li><a href="https://projectarete.io" target="_blank">Project Arete Website</a> (Reference implementation of CNS/CP)</li>
-                    <li><a href="https://github.com/project-arete" target="_blank">Project Arete on GitHub</a></li>
-                </ul>
-                
-            </section>
-            <section class="card">
-                <h2>Related Projects</h2>
-                <p>The CNS/CP framework is being applied in the following projects</p>
-                <ul style="margin-left: 2em;">
-                    <li><a href="https://www.interoperablebuildingbox.com" target="_blank">Interoperable Building Box (IBB)</a></li>
-                    <li><a href="https://c4sb.org" target="_blank">Coalition for Smarter Buildings (C4SB)</a></li>
-                </ul>
-            </section>
+
+        <div class="card">
+          <h2>Orchestration</h2>
+          <p>Central orchestration replaces conventional configuration. An orchestrator &mdash; sometimes called a broker &mdash; matches nodes with compatible context and CP roles, then instantiates direct, policy-governed relationships. No manual intervention, no static mapping.</p>
+          <p>This enables smarter automation, robust lifecycle management, and zero-trust enforcement, shifting connectivity from static schema to intent-based, policy-driven integration. Providers and consumers of CPs can change, scale, and update their profiles with minimal manual effort &mdash; streamlining integration for complex domains like smart buildings, IoT fleets, and enterprise services.</p>
         </div>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>© Copyright 2025. Padi Inc.  All rights reserved.</p>
+
+        <div class="card">
+          <h2>Open Source Implementation</h2>
+          <p>CNS/CP&rsquo;s architecture is fully open source and designed to work across industries. The formal specification is governed at <a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md">github.com/CNSCP/specification</a>, ensuring common standards and licensing for broad adoption.</p>
+          <ul>
+            <li><a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md">CNS/CP formal specification</a></li>
+            <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
+          </ul>
         </div>
-    </footer>
+
+        <div class="card">
+          <h2>Project Arete</h2>
+          <p><a href="https://projectarete.io">Project Arete</a> is the open-source reference implementation of CNS/CP, focusing on real-world orchestration, CP management, and scalable workflow automation. It helps validate, extend, and support the adoption of CNS/CP standards.</p>
+          <ul>
+            <li><a href="https://projectarete.io">Project Arete website</a> &mdash; reference implementation of CNS/CP</li>
+            <li><a href="https://github.com/project-arete">Project Arete on GitHub</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Related Projects</h2>
+          <p>The CNS/CP framework is being applied in the following projects:</p>
+          <ul>
+            <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box (IBB)</a></li>
+            <li><a href="https://c4sb.org">Coalition for Smarter Buildings (C4SB)</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="cols">
+      <div class="about">
+        <div class="f-brand"><img src="CNSCP-Square.png" alt="" /> CNS/CP</div>
+        <p>The Connectivity Naming System with Connection Profiles &mdash; an open standard for secure, composable, and orchestrated connectivity between digital systems.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <ul>
+          <li><a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md">Specification</a></li>
+          <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
+          <li><a href="https://cp.padi.io">CP Registry</a></li>
+          <li><a href="https://projectarete.io">Project Arete</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Related &amp; Connect</h4>
+        <ul>
+          <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box</a></li>
+          <li><a href="https://c4sb.org">Coalition for Smarter Buildings</a></li>
+          <li><a href="mailto:info@cnscp.io">info@cnscp.io</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tail">
+      <span>&copy; 2026 Padi Inc. All rights reserved.</span>
+      <span>Openly specified &mdash; one namespace, interoperable by design.</span>
+    </div>
+  </footer>
+  <script>
+    const hb = document.getElementById('hamburger');
+    const nav = document.getElementById('siteNav');
+    hb.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>

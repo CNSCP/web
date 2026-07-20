@@ -1,46 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>Contact - CNS/CP</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — CNS/CP</title>
+  <meta name="description" content="Contact the CNS/CP team.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Contact Us</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="license/index.html">Licensing</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="CNSCP-Square.png" alt="CNS/CP logo" /> CNS/CP</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Contact</span>
+        <h1>Get in Touch</h1>
+        <p>We&rsquo;d love to hear from you &mdash; questions, comments, or interest in adopting CNS/CP.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="tiles two">
+          <div class="tile">
+            <span class="t-icon">&#9993;&#65039;</span>
+            <h3>Email</h3>
+            <p>Reach out with any questions or comments about CNS/CP.</p>
+            <div class="t-links"><a href="mailto:info@cnscp.io">info@cnscp.io</a></div>
+          </div>
+          <div class="tile">
+            <span class="t-icon">&#128025;</span>
+            <h3>On GitHub</h3>
+            <p>The specification and related repositories are developed in the open.</p>
+            <div class="t-links"><a href="https://github.com/CNSCP">github.com/CNSCP</a></div>
+          </div>
         </div>
-    </header>
-    
-    <main>
-        <div class="container">
-            <section class="card">
-                <h2>Get in Touch</h2>
-                <p>We'd love to hear from you! Feel free to reach out with any questions or comments.</p>
-                <p>Email us at: <a href="mailto:info@cnscp.io">info@cnscp.io</a></p>
-            </section>
-            
-            <div style="text-align: center; margin-top: 20px;">
-                <img src="CNSCP-Square.png" alt="CNSCP Logo" style="width: 30%; height: auto;">
-            </div>
-        </div>
-    </main>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="cols">
+      <div class="about">
+        <div class="f-brand"><img src="CNSCP-Square.png" alt="" /> CNS/CP</div>
+        <p>The Connectivity Naming System with Connection Profiles &mdash; an open standard for secure, composable, and orchestrated connectivity between digital systems.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <ul>
+          <li><a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md">Specification</a></li>
+          <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
+          <li><a href="https://cp.padi.io">CP Registry</a></li>
+          <li><a href="https://projectarete.io">Project Arete</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Related &amp; Connect</h4>
+        <ul>
+          <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box</a></li>
+          <li><a href="https://c4sb.org">Coalition for Smarter Buildings</a></li>
+          <li><a href="mailto:info@cnscp.io">info@cnscp.io</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tail">
+      <span>&copy; 2026 Padi Inc. All rights reserved.</span>
+      <span>Openly specified &mdash; one namespace, interoperable by design.</span>
+    </div>
+  </footer>
+  <script>
+    const hb = document.getElementById('hamburger');
+    const nav = document.getElementById('siteNav');
+    hb.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
 </body>
 </html>
