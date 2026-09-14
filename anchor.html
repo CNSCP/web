@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registry anchor key — CNS/CP</title>
+  <meta name="description" content="The public key that signs the CP Registry's chain anchors, and how to check an anchor yourself.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css?v=nav2">
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="index.html"><img src="CNSCP-Square.png" alt="CNS/CP logo" /> CNS/CP</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Registry anchor</span>
+        <h1>The CP Registry&rsquo;s anchor key</h1>
+        <p>The Registry periodically signs the head of its audit chain. This page carries the public key that signature is made with, so that anyone can check an anchor without taking the Registry&rsquo;s word for anything.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="card">
+          <h2>Why this page exists</h2>
+          <p>Every act on the Connection Profile Registry is written to an append-only log, each entry carrying a hash of the one before it. That makes editing the past detectable: change anything and every entry after it stops matching.</p>
+          <p>What hashes alone cannot catch is a <em>fork</em> &mdash; a registry keeping two internally consistent histories and serving one to each party. Both would verify. Neither party could tell. So the operator signs the head of the chain with a key held outside the Registry&rsquo;s own infrastructure, and publishes the result. Two parties whose copies match the same signed head are provably holding the same history.</p>
+          <p>That only works if you can confirm which key is the real one &mdash; and a key announced only by the Registry proves nothing about the Registry. Hence this page, and the fingerprint below, to be compared by eye.</p>
+        </div>
+
+        <h2 style="margin-bottom:8px;">The root key</h2>
+        <p class="section-intro">In use since 14 September 2026. Vouched for by nothing else &mdash; that is what makes it the root.</p>
+        <div class="card">
+          <p style="margin-bottom:6px;"><strong>Key id</strong></p>
+          <p style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;">cp-anchor-2026-09</p>
+          <p style="margin-bottom:6px;"><strong>Public key</strong> (base64url, Ed25519)</p>
+          <p style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;">Rj9bGQe5TSJWmlcQoa4lJer0oj4r9lL6TJQQrqhDynI</p>
+          <p style="margin-bottom:6px;"><strong>Fingerprint</strong> (the raw key bytes, in hex &mdash; the same 32 bytes as above, written so a person can compare them)</p>
+          <p style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;">463f 5b19 07b9 4d22 569a 5710 a1ae 2525 eaf4 a23e 2bf6 52fa 4c94 10ae a843 ca72</p>
+          <p>If an anchor names a key whose fingerprint is not this one, and which is not vouched for by a chain of signatures leading back to this one, it is not this Registry&rsquo;s anchor &mdash; whatever it claims about its origin.</p>
+        </div>
+
+        <h2 style="margin-bottom:8px;">Checking it yourself</h2>
+        <p class="section-intro">No account, no credential, no relationship with the operator.</p>
+        <div class="card">
+          <p>The current anchor is served at <a href="https://cp.cnscp.io/.well-known/cp-anchor">cp.cnscp.io/.well-known/cp-anchor</a>, and the keys it may be signed by at <a href="https://cp.cnscp.io/.well-known/cp-keys">/.well-known/cp-keys</a>. The Registry&rsquo;s own tooling will walk the public journal and compare it against the signed head:</p>
+          <p style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all;">npm run verify-journal -- https://cp.cnscp.io --anchor cp-anchor-2026-09</p>
+          <p>The same anchors are mirrored in a public repository the Registry does not control, so the two copies can be compared. A disagreement between them is not an inconvenience &mdash; it is the evidence.</p>
+          <p>The mechanism, the cadence and its limits are described in full in the Registry&rsquo;s <a href="https://github.com/CNSCP/registry/blob/main/REGISTRY-DESIGN.md">design document</a>, §20.2.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="cols">
+      <div class="about">
+        <div class="f-brand"><img src="CNSCP-Square.png" alt="" /> CNS/CP</div>
+        <p>The Connectivity Naming System with Connection Profiles &mdash; an open standard for secure, composable, and orchestrated connectivity between digital systems.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="license/index.html">Licensing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="anchor.html">Anchor key</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ecosystem</h4>
+        <ul>
+          <li><a href="https://github.com/CNSCP/specification/blob/main/cns-cp.md">Specification</a></li>
+          <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
+          <li><a href="https://cp.cnscp.io">CP Registry</a></li>
+          <li><a href="https://projectarete.io">Project Arete</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Related &amp; Connect</h4>
+        <ul>
+          <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box</a></li>
+          <li><a href="https://c4sb.org">Coalition for Smarter Buildings</a></li>
+          <li><a href="mailto:info@cnscp.io">info@cnscp.io</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tail">
+      <span>&copy; 2026 Padi Inc. All rights reserved.</span>
+      <span>Openly specified &mdash; one namespace, interoperable by design.</span>
+    </div>
+  </footer>
+  <script>
+    const hb = document.getElementById('hamburger');
+    const nav = document.getElementById('siteNav');
+    hb.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+</body>
+</html>
