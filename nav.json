@@ -1,0 +1,11 @@
+{
+  "note": "The site navigation, defined once. scripts/nav.mjs writes it into every page between the NAV markers; the CP Registry renders the same six from its own copy and test/nav.test.ts compares the two when this repository is checked out beside it. Edit here, run the script, never edit a header by hand.",
+  "items": [
+    { "id": "home",    "label": "Home",          "href": "index.html" },
+    { "id": "registry","label": "Registry",      "href": "https://cp.cnscp.io" },
+    { "id": "spec",    "label": "Specification", "href": "https://github.com/CNSCP/specification" },
+    { "id": "legal",   "label": "Legal",         "href": "license/index.html" },
+    { "id": "about",   "label": "About",         "href": "about.html" },
+    { "id": "contact", "label": "Contact",       "href": "contact.html" }
+  ]
+}
