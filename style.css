@@ -59,6 +59,7 @@ main { flex: 1; }
 .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 700; font-size: 1.1rem; }
 .brand img { width: 30px; height: 30px; border-radius: 7px; }
 .brand:hover { text-decoration: none; }
+.tm { font-size: .5em; font-weight: 500; vertical-align: super; line-height: 0; margin-left: 1px; letter-spacing: 0; }
 .site-nav { margin-left: auto; }
 .site-nav ul { list-style: none; display: flex; gap: 4px; }
 .site-nav a {
