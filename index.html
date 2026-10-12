@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CNS/CP — Connectivity by Name, Contract, and Context</title>
-  <meta name="description" content="CNS/CP is an open standard for secure, composable, and orchestrated connectivity between digital systems.">
+  <meta name="description" content="CNS/CP is an open standard for deciding whether two digital systems may connect, and on what terms.">
   <link rel="icon" href="favicon.ico?v=2" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
@@ -36,8 +36,8 @@
       <div class="wrap">
         <span class="eyebrow">An open standard &middot; Governed by public specifications</span>
         <h1>Connectivity by name, contract, and context.</h1>
-        <p class="lead">CNS/CP &mdash; the Connectivity Naming System using Connection Profiles &mdash; is an open standard for secure, composable, and orchestrated connectivity between digital systems. Nodes interact through named profiles in specific contexts, moving beyond classic Internet models like DNS and IP addresses.</p>
-        <p class="lede-note">Every node declares its role as <strong>provider</strong> or <strong>consumer</strong> of a Connection Profile &mdash; uniquely named like <span class="mono">cp:test.abc</span> &mdash; and connects on compatible context: a smart building, a fleet, a digital service.</p>
+        <p class="lead">CNS/CP &mdash; the Connectivity Naming System using Connection Profiles &mdash; is an open standard for deciding whether two digital systems may connect, and on what terms. Systems connect by what they declare they can do, at named Contexts, under a Realm&rsquo;s published rules, rather than by address.</p>
+        <p class="lede-note">Every Node declares itself <strong>Provider</strong> or <strong>Consumer</strong> of a Connection Profile &mdash; uniquely named like <span class="mono">cp:example.occupancy</span> &mdash; at a Context: a room, a vehicle, a service. Where two declarations fit, the Realm&rsquo;s Governor forms the Connection.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/CNSCP/specification/blob/main/cnscp-2026-specification.md">Read the specification</a>
           <a class="btn btn-ghost" href="about.html">Learn how it works</a>
@@ -47,22 +47,25 @@
 
     <section class="section">
       <div class="wrap">
-        <h2>The model in four steps</h2>
-        <p class="section-intro">Traditional networks connect addresses and hope the rules get bolted on later. CNS/CP is relationship-centric: nothing connects without declared identity, roles, and a matching Connection Profile. Others standardize messages &mdash; CNS/CP standardizes <em>binding</em>.</p>
-        <div class="steps">
-          <div class="step"><span class="k">1 &middot; Declare</span><p>Nodes publish the Connection Profiles they provide or consume, inside a declared context.</p></div>
-          <div class="step"><span class="k">2 &middot; Broker</span><p>An orchestrator matches compatible provider and consumer declarations in a shared context.</p></div>
-          <div class="step"><span class="k">3 &middot; Bind</span><p>A governed connection is instantiated &mdash; validated, policy-enforced, and auditable from the start.</p></div>
-          <div class="step"><span class="k">4 &middot; Operate</span><p>The contract is monitored, adjusted, and audited across the connection&rsquo;s whole lifecycle.</p></div>
+        <h2>Six steps, two phases</h2>
+        <p class="section-intro">Traditional networks connect addresses and hope the rules get bolted on later. In CNS/CP nothing is connected unless a Node has been admitted, holds standing at a Context, and has declared a Capability that another declaration matches. Others standardize messages &mdash; CNS/CP standardizes <em>binding</em>.</p>
+        <div class="steps three">
+          <div class="step"><span class="k">1 &middot; Enroll</span><p>A Node presents an identity, and the Governor admits or rejects it.</p></div>
+          <div class="step"><span class="k">2 &middot; Authorize</span><p>The Node asserts a Context, and the Governor authorizes or rejects the assertion.</p></div>
+          <div class="step"><span class="k">3 &middot; Declare</span><p>The Node declares a Capability: a Connection Profile, a role in it, and an authorized Context.</p></div>
+          <div class="step"><span class="k">4 &middot; Reconcile</span><p>Whenever anything changes, the Governor brings the Realm&rsquo;s Connections back in line with what it holds.</p></div>
+          <div class="step"><span class="k">5 &middot; Match</span><p>Same Profile, complementary roles, matching Contexts, a version both support: every pair that fits is matched.</p></div>
+          <div class="step"><span class="k">6 &middot; Bind</span><p>The Governor forms the Connection. Everything it carries passes through the Realm.</p></div>
         </div>
+        <p style="margin-top:18px;"><a href="about.html">How the six steps work &rarr;</a></p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
         <div class="card">
-          <h2>Orchestration at the heart</h2>
-          <p>In CNS/CP, an orchestrator matches system nodes based on their declared capabilities and context, enacting automated and dynamic workflows. This simplifies interoperability, fosters smarter system relationships, and elevates network trust, resilience, and agility.</p>
+          <h2>A Governor at the heart of every Realm</h2>
+          <p>Each Realm &mdash; a building, a fleet, a hospital &mdash; has one Governor. It holds the Realm&rsquo;s published rules and its Context Register, decides who is admitted, and forms every Connection. Given the same declarations, the same published rules and the same Profile versions, any conforming Governor forms the same Connections. Realms compose: a containing Realm sees a Node, not the Realm behind it.</p>
           <p>CNS/CP is open: the specification is public, the Registry is public, and the reference implementation is open source under Apache&nbsp;2.0. Whether you are building, connecting, or governing digital systems, CNS/CP is your pathway to seamless integration and scalable value.</p>
         </div>
 
@@ -84,14 +87,14 @@
           <div class="tile">
             <span class="t-icon">&#129513;</span>
             <h3>Project Arete</h3>
-            <p>The open-source reference implementation: orchestrators, SDKs, a local REST gateway and desktop apps.</p>
+            <p>The open-source reference implementation: a Governor, SDKs, a local REST gateway and desktop apps.</p>
             <div class="t-links"><a href="https://projectarete.io">projectarete.io</a> <a href="https://github.com/project-arete">GitHub</a></div>
           </div>
         </div>
 
         <div class="cta-band">
           <h2>See CNS/CP in practice</h2>
-          <p>Project Arete puts the standard to work &mdash; spin up an orchestrator, connect apps, and watch governed connections come to life.</p>
+          <p>Project Arete puts the standard to work &mdash; run a Realm, connect apps, and watch Connections form under its rules.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="https://projectarete.io">Explore Project Arete</a>
             <a class="btn btn-ghost" href="about.html">More about CNS/CP</a>
@@ -104,7 +107,7 @@
     <div class="cols">
       <div class="about">
         <div class="f-brand"><img src="CNSCP-Square.png" alt="" /> CNS/CP</div>
-        <p>The Connectivity Naming System using Connection Profiles &mdash; an open standard for secure, composable, and orchestrated connectivity between digital systems.</p>
+        <p>The Connectivity Naming System using Connection Profiles &mdash; an open standard for whether and how digital systems connect.</p>
       </div>
       <div>
         <h4>Site</h4>

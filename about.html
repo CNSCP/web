@@ -4,11 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — CNS/CP</title>
-  <meta name="description" content="How CNS/CP works: Connection Profiles, orchestration, the open-source specification, and Project Arete.">
+  <meta name="description" content="What CNS/CP does: an open standard for deciding whether two digital systems may connect, and on what terms. Nodes, Contexts, Connection Profiles, Realms and their Governors, and the six steps that form a Connection.">
   <link rel="icon" href="favicon.ico?v=2" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
   <link rel="stylesheet" href="style.css?v=tm1">
+  <style>
+    /* About-page additions, in the site's own tokens. */
+    .ref { font-size: .78rem; font-weight: 700; color: var(--blue); white-space: nowrap; }
+    .more { display: inline-block; margin-top: 4px; font-weight: 650; font-size: .95rem; }
+    .more::after { content: " \2192"; }
+    .prose { max-width: 68ch; }
+    .layers { display: grid; gap: 8px; }
+    .layer { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr); gap: 14px; align-items: baseline; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; }
+    .layer b { color: var(--ink); }
+    .layer span { color: var(--muted); font-size: .93rem; }
+    .layer.cnscp { border: 2px solid var(--blue); background: var(--panel); }
+    .layer.cnscp b { color: var(--blue-ink); }
+    .phase-label { font-size: .78rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 26px 0 -20px; }
+    .phase-label b { color: var(--ink); }
+    .steps.three .step .n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--blue); color: #fff; font-size: .78rem; font-weight: 800; margin-right: 8px; vertical-align: 1px; }
+    .steps.three.op .step .n { background: var(--blue-ink); }
+    .steps.three .step .k { margin-bottom: 8px; }
+    .tile .t-term { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem; color: var(--muted); margin-bottom: 6px; }
+    .lifecycle { width: 100%; height: auto; display: block; }
+    .lifecycle text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .card-media figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+    .nots { list-style: none; margin: 0 !important; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 28px; }
+    .nots li { margin: 0 !important; }
+    .nots b { display: block; color: var(--ink); }
+    .ex-links { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 6px; }
+    @media (max-width: 900px) { .nots { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .layer { grid-template-columns: 1fr; gap: 2px; } .phase-label { margin: 22px 0 -24px; } }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -35,50 +63,192 @@
     <section class="page-head">
       <div class="wrap">
         <span class="eyebrow">About</span>
-        <h1>About the CNS/CP Project</h1>
-        <p>CNS/CP centers every digital relationship on explicit capabilities, roles, and use-case context &mdash; not merely on where a node is, but on what a node provides, and for whom, within a particular real-world or logical context.</p>
+        <h1>What CNS/CP does</h1>
+        <p>CNS/CP decides whether two systems may connect, and on what terms. Protocols standardize what systems can say to each other. Almost nothing standardizes whether two systems should be connected at all. CNS/CP is an open standard for that step.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="wrap">
-        <div class="card">
-          <h2>Connection Profiles</h2>
-          <p>Every connection in CNS/CP is defined by a <strong>Connection Profile</strong> &mdash; named in the format <span class="mono">cp:profile.example</span> &mdash; that describes both the consumer and provider roles involved. Each declared CP outlines the properties expected of both roles, allowing system nodes to advertise or request capabilities universally.</p>
-          <p>Nodes declare their intended profiles and the context where their capabilities apply &mdash; a physical space like a factory, or an abstract scope such as a digital-service vertical. The result is purposeful, orchestrated networks in which interoperability and security are built into every connection, and dynamic relationships adapt in real time.</p>
+        <h2>The gap</h2>
+        <div class="prose">
+          <p>Before two systems that have never been integrated can exchange anything, whether data, a tool call or a control action, someone has to establish that what one offers matches what the other needs, and connect them on terms both accept. Today that is done by hand, once for each pair. The terms it settles are written down nowhere anyone can inspect, audit or revoke.</p>
+          <p>The cost is not that this work gets thrown away. It is that it never changes. Written once for a pair of systems, an integration keeps giving the answer it was given on the day it was written.</p>
+          <p>The problem is growing. Mesh architectures multiply the relationships each system has to hold, and AI agents now start cross-boundary interactions on their own, at machine speed. Under CNS/CP, an agent's reach is no wider than what it has declared.</p>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Orchestration</h2>
-          <p>Central orchestration replaces conventional configuration. An orchestrator &mdash; sometimes called a broker &mdash; matches nodes with compatible context and CP roles, then instantiates direct, policy-governed relationships. No manual intervention, no static mapping.</p>
-          <p>This enables smarter automation, robust lifecycle management, and zero-trust enforcement, shifting connectivity from static schema to intent-based, policy-driven integration. Providers and consumers of CPs can change, scale, and update their profiles with minimal manual effort &mdash; streamlining integration for complex domains like smart buildings, IoT fleets, and enterprise services.</p>
+    <section class="section">
+      <div class="wrap">
+        <h2>Where it sits</h2>
+        <p class="section-intro">CNS/CP is a connection layer between the application protocols systems already speak and the identity systems they already use. It relies on identity without checking credentials, and carries application traffic without reading it. <span class="ref">§3.1</span></p>
+        <div class="layers" role="list" aria-label="Three layers">
+          <div class="layer" role="listitem"><b>Application layer</b><span>What connected systems say to each other: BACnet, FHIR, MCP and the rest.</span></div>
+          <div class="layer cnscp" role="listitem"><b>Connection layer · CNS/CP</b><span>Whether two systems may connect, and on what terms.</span></div>
+          <div class="layer" role="listitem"><b>Identity layer</b><span>Who a party is: X.509 certificates, OAuth and the like.</span></div>
         </div>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Open Source Implementation</h2>
-          <p>The CNS/CP reference implementation is open source, and the architecture is designed to work across industries. The formal specification is published at <a href="https://github.com/CNSCP/specification/blob/main/cnscp-2026-specification.md">github.com/CNSCP/specification</a>; one specification and one namespace are what keep every implementation interoperable.</p>
-          <ul>
-            <li><a href="https://github.com/CNSCP/specification/blob/main/cnscp-2026-specification.md">CNS/CP formal specification</a></li>
-            <li><a href="https://github.com/CNSCP">CNS/CP on GitHub</a></li>
-          </ul>
+    <section class="section">
+      <div class="wrap">
+        <h2>Four ideas</h2>
+        <p class="section-intro">The specification defines a small vocabulary and uses each word in one sense only. These four carry most of it.</p>
+        <div class="tiles four">
+          <div class="tile">
+            <div class="t-term">§4.2</div>
+            <h3>Node</h3>
+            <p>How a system takes part. A Node enrolls with an identity, asserts the Contexts it has standing at, and declares what it can do. Nothing about what runs behind it is visible.</p>
+          </div>
+          <div class="tile">
+            <div class="t-term">§4.3</div>
+            <h3>Context</h3>
+            <p>A name for something in the real or logical world: a room, a feeder, a vehicle, a service. It belongs to no Node. Two systems connect about a Context, not about each other's addresses.</p>
+          </div>
+          <div class="tile">
+            <div class="t-term">§6</div>
+            <h3>Connection Profile</h3>
+            <p>A named, versioned contract, such as <span class="mono">cp:example.occupancy</span>. It has two roles, Provider and Consumer, and says exactly what may cross between them. Profiles are published once, in one Registry.</p>
+          </div>
+          <div class="tile">
+            <div class="t-term">§4.1</div>
+            <h3>Realm and Governor</h3>
+            <p>A Realm is the bounded region where Connections are formed: a building, a fleet, a hospital. Its Governor holds the Realm's published rules, decides who is admitted, and forms every Connection.</p>
+          </div>
         </div>
+        <a class="more" href="https://claude.ai/artifact/MhkhZ1cwRGHERtoq37sxQw#parts">All eight defined terms</a>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Project Arete</h2>
-          <p><a href="https://projectarete.io">Project Arete</a> is the open-source reference implementation of CNS/CP, focusing on real-world orchestration, CP management, and scalable workflow automation. It helps validate, extend, and support the adoption of CNS/CP standards.</p>
-          <ul>
-            <li><a href="https://projectarete.io">Project Arete website</a> &mdash; reference implementation of CNS/CP</li>
-            <li><a href="https://github.com/project-arete">Project Arete on GitHub</a></li>
-          </ul>
+    <section class="section">
+      <div class="wrap">
+        <h2>How a Connection forms</h2>
+        <p class="section-intro">Six steps in two phases. In Admission, a Node submits and the Governor decides, three times. In Operation, the Governor acts on what it already holds. Nobody submits anything, and the phase never ends. <span class="ref">§8</span></p>
+        <p class="phase-label"><b>Admission</b> · the Node submits</p>
+        <div class="steps three">
+          <div class="step"><span class="k"><span class="n">1</span>Enroll</span><p>The Node presents an identity. The Governor admits it or rejects it.</p></div>
+          <div class="step"><span class="k"><span class="n">2</span>Authorize</span><p>The Node asserts a Context. The Governor authorizes it, possibly for a stated term, or rejects it.</p></div>
+          <div class="step"><span class="k"><span class="n">3</span>Declare</span><p>The Node declares a Capability: a Profile, a role in it, and one authorized Context. The declaration stands until something matches it.</p></div>
         </div>
+        <p class="phase-label"><b>Operation</b> · the Governor acts, continuously</p>
+        <div class="steps three op">
+          <div class="step"><span class="k"><span class="n">4</span>Reconcile</span><p>Whenever anything changes, the Governor brings the Realm's Connections back in line with what it holds.</p></div>
+          <div class="step"><span class="k"><span class="n">5</span>Match</span><p>Same Profile, complementary roles, matching Contexts, a version both support. Every pair that fits is matched.</p></div>
+          <div class="step"><span class="k"><span class="n">6</span>Bind</span><p>The Governor forms the Connection and attaches both Nodes. From here data flows, and all of it passes through the Realm.</p></div>
+        </div>
+        <p style="margin-top:22px;">Matching is complete: the Governor does not choose among matching pairs, and which Connections a system goes on to use is the system's own choice. Given the same declarations, the same published rules and the same Profile versions, any conforming Governor forms the same Connections.</p>
+        <a class="more" href="https://claude.ai/artifact/MhkhZ1cwRGHERtoq37sxQw#steps">Step through it, and try it with two Nodes</a>
+      </div>
+    </section>
 
-        <div class="card">
-          <h2>Related Projects</h2>
-          <p>The CNS/CP framework is being applied in the following projects:</p>
-          <ul>
-            <li><a href="https://www.interoperablebuildingbox.com">Interoperable Building Box (IBB)</a></li>
-            <li><a href="https://c4sb.org">Coalition for Smarter Buildings (C4SB)</a></li>
-          </ul>
+    <section class="section">
+      <div class="wrap">
+        <div class="card card-split">
+          <figure class="card-media">
+            <svg class="lifecycle" viewBox="0 0 360 200" role="img" aria-label="Connection statuses. Ready at Bind. The Consumer reports Active and Inactive. The Provider can report Unavailable from any status and returns the Connection to Ready. Only dissolution ends a Connection.">
+              <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" fill="#6b7684"/></marker></defs>
+              <rect x="1" y="1" width="358" height="198" rx="12" fill="#f5f8fc" stroke="#e3e9f1"/>
+              <text x="18" y="26" font-size="11" font-weight="700" fill="#6b7684" letter-spacing=".06em">AT BIND</text>
+              <rect x="18" y="36" width="88" height="30" rx="15" fill="#fff" stroke="#c99a2e" stroke-width="1.5"/><text x="62" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#9a6a00">Ready</text>
+              <rect x="146" y="36" width="88" height="30" rx="15" fill="#fff" stroke="#2f7d3a" stroke-width="1.5"/><text x="190" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#2f7d3a">Active</text>
+              <rect x="256" y="36" width="88" height="30" rx="15" fill="#fff" stroke="#6b7684" stroke-width="1.5"/><text x="300" y="56" text-anchor="middle" font-size="13" font-weight="700" fill="#3d4a59">Inactive</text>
+              <line x1="106" y1="51" x2="144" y2="51" stroke="#6b7684" stroke-width="1.4" marker-end="url(#ar)"/>
+              <line x1="234" y1="45" x2="254" y2="45" stroke="#6b7684" stroke-width="1.4" marker-end="url(#ar)"/>
+              <line x1="256" y1="57" x2="236" y2="57" stroke="#6b7684" stroke-width="1.4" marker-end="url(#ar)"/>
+              <text x="190" y="84" text-anchor="middle" font-size="10.5" fill="#6b7684">reported by the Consumer</text>
+              <rect x="18" y="100" width="104" height="30" rx="15" fill="#fff" stroke="#b4372a" stroke-width="1.5"/><text x="70" y="120" text-anchor="middle" font-size="13" font-weight="700" fill="#b4372a">Unavailable</text>
+              <line x1="54" y1="98" x2="54" y2="68" stroke="#6b7684" stroke-width="1.4" marker-end="url(#ar)"/>
+              <text x="132" y="113" font-size="10.5" fill="#6b7684">from any status, reported by the Provider;</text>
+              <text x="132" y="127" font-size="10.5" fill="#6b7684">it returns the Connection to Ready</text>
+              <line x1="18" y1="152" x2="342" y2="152" stroke="#0f6feb" stroke-width="1.4" stroke-dasharray="5 4"/>
+              <text x="18" y="174" font-size="12" fill="#3d4a59">No status ends a Connection. Only dissolution,</text>
+              <text x="18" y="190" font-size="12" fill="#3d4a59">through Reconcile, does.</text>
+            </svg>
+            <figcaption>Connection statuses, simplified. <span class="ref">§10.1</span></figcaption>
+          </figure>
+          <div>
+            <h2>The life of a Connection</h2>
+            <p>A Connection keeps the Profile version it was bound at for life. Its status is the state at Bind or the latest report the Governor accepted, not a measure of health. An authorization can be revoked, or lapse at the end of a stated term, and the Realm stops conveying on that Connection at once.</p>
+            <p>What each system does with what arrives is its own runtime's decision, not the Connection's. CNS/CP governs whether two systems are connected and what may cross. It does not decide whether an action, once delivered, goes ahead. <span class="ref">§6.4</span></p>
+            <div class="ex-links">
+              <a class="more" href="https://claude.ai/artifact/VFuKT2A5P6U5ASUS8KL5sp">Lifecycle basics</a>
+              <a class="more" href="https://claude.ai/artifact/3NQiDwCEg54dkg8ZAmPC5e">Lifecycle with a Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="card card-split flip">
+          <div>
+            <h2>Realms at every scale</h2>
+            <p>A Realm can be one building, a bank's branch network, or a city. Realms do not merge. They compose: a system admitted to two Realms takes part in each through its own Node, and each Realm runs its own six steps. A containing Realm sees a Node, not the Realm behind it, and no Connection crosses a Realm boundary. <span class="ref">§10.3</span></p>
+            <p>Three worked examples, all invented, show this from each side.</p>
+            <div class="ex-links">
+              <a class="more" href="https://claude.ai/artifact/UHurwFg4fxpLtXw26BNX4d">Ashwin, a city of Realms</a>
+              <a class="more" href="https://claude.ai/artifact/QSWm6P9whSCUXVwErhjQ8e">Building 51</a>
+              <a class="more" href="https://claude.ai/artifact/HHaPv3a8NYdJiSTLjGNEFn">Larkfield Bank</a>
+            </div>
+          </div>
+          <figure class="card-media">
+            <img src="about-ashwin.jpg" width="1920" height="1050" alt="A city seen from above at night. Buildings sit inside violet Realm boundaries; above the skyline, the city's Realm connects one Node per building Realm to the city's services." loading="lazy">
+            <figcaption>Ashwin, an invented city. Each building Realm takes part in the city's Realm through one Node.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>What CNS/CP is not</h2>
+        <p class="section-intro">The specification says what must be true, not how it is achieved, and it is precise about what it leaves to others. <span class="ref">§2.2</span></p>
+        <ul class="nots">
+          <li><b>Not an application protocol.</b> A Connection carries what its Profile declares. CNS/CP does not read or interpret it.</li>
+          <li><b>Not an identity system.</b> A Realm names the identity it trusts and acts on the outcome. It never checks credentials itself.</li>
+          <li><b>Not orchestration or workflow.</b> Which Connections a system uses, in what order and to what end, sits above this layer.</li>
+          <li><b>Not monitoring.</b> A status is a report a Node made. Heartbeats and inspection are left to implementations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Open, and on a standards track</h2>
+        <p class="section-intro">One specification and one Profile namespace keep every implementation meaning the same thing by the same name.</p>
+        <div class="tiles four">
+          <div class="tile">
+            <h3>The Specification</h3>
+            <p>The 2026 revision, a working draft, published openly for comment.</p>
+            <div class="t-links"><a href="https://github.com/CNSCP/specification/blob/main/cnscp-2026-specification.md">Read it</a> <a href="https://github.com/CNSCP">GitHub</a></div>
+          </div>
+          <div class="tile">
+            <h3>OSTERA</h3>
+            <p>The specification has been contributed to OSTERA, where a Working Group is taking it forward as an open standard.</p>
+            <div class="t-links"><a href="https://www.ostera.org">ostera.org</a></div>
+          </div>
+          <div class="tile">
+            <h3>CP Registry</h3>
+            <p>Where Connection Profiles are registered and published, in one namespace.</p>
+            <div class="t-links"><a href="https://cp.cnscp.io">cp.cnscp.io</a></div>
+          </div>
+          <div class="tile">
+            <h3>Project Arete</h3>
+            <p>The open-source reference implementation of CNS/CP.</p>
+            <div class="t-links"><a href="https://projectarete.io">projectarete.io</a> <a href="https://github.com/project-arete">GitHub</a></div>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.95rem;">CNS/CP is being applied by the <a href="https://www.interoperablebuildingbox.com">Interoperable Building Box</a> and the <a href="https://c4sb.org">Coalition for Smarter Buildings</a>.</p>
+
+        <div class="cta-band">
+          <h2>Go deeper</h2>
+          <p>The specification is the reference. The explainers show the same ideas working, one step at a time.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://github.com/CNSCP/specification/blob/main/cnscp-2026-specification.md">Read the specification</a>
+            <a class="btn btn-ghost" href="https://claude.ai/artifact/MhkhZ1cwRGHERtoq37sxQw">How a Connection forms</a>
+          </div>
         </div>
       </div>
     </section>
@@ -87,7 +257,7 @@
     <div class="cols">
       <div class="about">
         <div class="f-brand"><img src="CNSCP-Square.png" alt="" /> CNS/CP</div>
-        <p>The Connectivity Naming System using Connection Profiles &mdash; an open standard for secure, composable, and orchestrated connectivity between digital systems.</p>
+        <p>The Connectivity Naming System using Connection Profiles &mdash; an open standard for whether and how digital systems connect.</p>
       </div>
       <div>
         <h4>Site</h4>
